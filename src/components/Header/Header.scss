@@ -1,0 +1,26 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 25px;
+
+    &__Button {
+        #language-button {
+            width: 108px;
+            font-family: 'Almarai', sans-serif;
+            margin-top: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .Header {
+        &__Logo img {
+            width: 75%;
+        }
+
+        &__Button #language-button {
+            width: 90px;
+        }
+    }
+
+}

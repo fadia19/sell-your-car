@@ -1,0 +1,62 @@
+.Requirements {
+    width: 100%;
+    height: 188px;
+    background-color: #F6FBFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__Title {
+        margin: 0 auto;
+        text-align: center;
+        
+        h2 {
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+    }
+
+    &__Section {
+        display: inline-flex;
+        justify-content: space-around;
+        width: 100%;
+        text-align: center;
+
+        &__Document {
+            color: #595F6F;
+
+            h6 {
+                font-size: 0.8rem;
+                font-weight: 400;
+                margin: 0;
+            }
+
+            h5 {
+                margin: 0;
+                font-weight: 600;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .Requirements {
+        height: 288px;
+        padding: 0;
+        
+        &__Section {
+            justify-content: center;
+
+            &__Document {
+                margin: 0 20px;
+                h5 {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+
+}

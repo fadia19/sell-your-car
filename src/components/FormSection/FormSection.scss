@@ -1,0 +1,173 @@
+.FormSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 10px;
+  min-width: 0;
+
+  &__Titles {
+    text-align: center;
+
+    h2 {
+      color: #000;
+      font-weight: bold;
+      font-size: 35px;
+      margin: 0;
+    }
+    h5 {
+      color: #595f6f;
+      font-weight: 400;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  }
+
+  &__Content {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+
+    &__LeftSection {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__Headers {
+        h2 {
+          font-size: 28px;
+          font-weight: bold;
+          color: #000;
+        }
+        h5 {
+          font-size: 18px;
+          font-weight: 600;
+          color: #595f6f;
+        }
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          color: #595f6f;
+          width: 80%;
+
+          &.semi-bold {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    &__RightSection {
+      width: 40%;
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #595f6f;
+      }
+      legend {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 25px;
+      }
+
+      label {
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 30px;
+      }
+
+      .error-msg {
+        background-color: #EC1C24;
+        width: 85%;
+        color: #fff;
+        font-weight: 400;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 5px 15px;
+      }
+
+      select, 
+      input {
+        display: block;
+        margin-top: 15px;
+        width: 90%;
+        padding: 16px 30px;
+        border: 1px solid #bfc4ce;
+        color: black;
+        font-size: 16px;
+        font-weight: 400;
+        cursor: url('../../assets/Bitmap.svg'), pointer;
+
+        &:focus,
+        &:active,
+        &:focus-visible {
+          border: 2px solid #bfc4ce;
+        }
+
+        option {
+          color: black;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+
+      input {
+        width: 80%;
+      }
+
+      button {
+        width: 203px;
+        margin-top: 50px;
+        box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+
+        img {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .FormSection {
+    &__Content {
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      &__LeftSection {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+
+        iframe {
+          width: 100%;
+        }
+
+        p {
+          width: 100%;
+        }
+      }
+
+      &__RightSection {
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 10px;
+
+        input {
+          width: 77%;
+        }
+
+        .error-msg {
+          width: 83%;
+        }
+      }
+    }
+  }
+
+}
+

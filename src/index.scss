@@ -1,0 +1,39 @@
+@import './fonts.scss';
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+// Generic Classes
+.red-button {
+    background-color: #EC1C24;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hasError {
+    background-color: rgba(236, 28, 36, 0.04);
+    border: 1px solid #EC1C24 !important;
+
+    &:focus, 
+    &:active,
+    &:focus-visible {
+    border: 2px solid #EC1C24 !important;
+    }
+    
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}

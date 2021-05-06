@@ -1,0 +1,106 @@
+.Services {
+    height: 709px;
+    width: 100%;
+    background-color: #F6FBFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__Headers {
+        text-align: center;
+
+        h1 {
+            font-weight: bold;
+            font-size: 35px;
+            color: #000;
+        }
+
+        h3 {
+            color: #595F6F;
+            font-size: 18px;
+            font-weight: 400;
+            width: 50%;
+            margin: 0 auto;
+        }
+        
+    }
+
+    &__Section {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        &__Card {
+            display: flex;
+            justify-content: space-around;
+            width: 360px;
+            border: 1px solid #DDDFE7;
+            height: 247px;
+            margin: 0 20px;
+
+            &__Icon {
+                margin: 70px auto;
+            }
+
+            &__Text {
+                color: #595F6F;
+                text-align: left;
+                width: 70%;
+                margin-top: 20px;
+
+                h4 {
+                    font-weight: 600;
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                }
+
+                h5 {
+                    font-weight: 400;
+                    font-size: 14px;
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .Services {
+        height: auto;
+
+        &__Headers {
+            margin: 30px auto;
+
+            h3 {
+                width: 100%;
+            }
+        }
+
+        &__Section {
+            flex-direction: column;
+            padding: 20px;
+
+            &__Card {
+                margin: 25px auto;
+                width: 90%;
+                height: 248px;
+                flex-direction: column;
+
+                &__Text {
+                    text-align: center;
+                    width: 80%;
+                    margin: 0 auto;
+
+                    h4 {
+                        margin-top: 0;
+                    }
+                }
+
+                &__Icon {
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+}
