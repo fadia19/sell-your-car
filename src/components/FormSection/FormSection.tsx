@@ -28,42 +28,42 @@ const FormSection = (): JSX.Element => {
 
   const handleUpdateMake = (value: any): void => {
     updateMake(value);
-      setErrors((prevState) => ({
-        ...prevState,
-        make: !!!value,
-      }));
+    setErrors((prevState) => ({
+      ...prevState,
+      make: !!!value,
+    }));
   };
 
   const handleUpdateModel = (value: any): void => {
     updateModel(value);
-      setErrors((prevState) => ({
-        ...prevState,
-        model: !!!value,
-      }));
+    setErrors((prevState) => ({
+      ...prevState,
+      model: !!!value,
+    }));
   };
   const handleUpdateName = (value: any): void => {
     updateName(value);
-      setErrors((prevState) => ({
-        ...prevState,
-        name: !!!value,
-      }));
+    setErrors((prevState) => ({
+      ...prevState,
+      name: !!!value,
+    }));
   };
   const handleUpdatePhone = (value: any): void => {
     updatePhone(value);
-      setErrors((prevState) => ({
-        ...prevState,
-        phone: !!!value,
-      }));
+    setErrors((prevState) => ({
+      ...prevState,
+      phone: !!!value,
+    }));
   };
 
   const handleCheckValidations = (): void => {
     const missingFields: boolean[] = [];
-     Object.entries(errors).forEach(([key, value]) =>{
+    Object.entries(errors).forEach(([key, value]) => {
       missingFields.push(value);
     });
-    const emptyValues = !!!make || !!!model || !!!name || !!!phone; 
-    setInvalidForm(missingFields.some(val => val) || emptyValues);
-  }
+    const emptyValues = !!!make || !!!model || !!!name || !!!phone;
+    setInvalidForm(missingFields.some((val) => val) || emptyValues);
+  };
 
   return (
     <div className="FormSection">
@@ -90,11 +90,11 @@ const FormSection = (): JSX.Element => {
           </div>
         </div>
         <div className="FormSection__Content__RightSection">
-          {
-            invalidForm ? (
-              <div className="error-msg align-left">*All fields are required to be filled</div>
-            ) : null
-          }
+          {invalidForm ? (
+            <div className="error-msg align-left">
+              *All fields are required to be filled
+            </div>
+          ) : null}
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -109,9 +109,13 @@ const FormSection = (): JSX.Element => {
                   value={make}
                   onChange={(e) => handleUpdateMake(e.target.value)}
                   onBlur={(e) => handleUpdateMake(e.target.value)}
-                  className={errors.make || (invalidForm && !make) ? "hasError" : ""}
+                  className={
+                    errors.make || (invalidForm && !make) ? "hasError" : ""
+                  }
                 >
-                  <option />
+                  <option value="" disabled selected>
+                    Select Brand
+                  </option>
                   {carsMakes.map((item) => (
                     <option key={item} value={item}>
                       {item}
@@ -119,7 +123,9 @@ const FormSection = (): JSX.Element => {
                   ))}
                 </select>
                 {errors.make ? (
-                  <div className="error-msg align-right">Please select a car make</div>
+                  <div className="error-msg align-right">
+                    Please select a car make
+                  </div>
                 ) : null}
               </label>
               <label htmlFor="car-model">
@@ -129,10 +135,13 @@ const FormSection = (): JSX.Element => {
                   value={model}
                   onChange={(e) => handleUpdateModel(e.target.value)}
                   onBlur={(e) => handleUpdateModel(e.target.value)}
-                  className={errors.model || (invalidForm && !model) ? "hasError" : ""}
-                  placeholder="Select Brand"
+                  className={
+                    errors.model || (invalidForm && !model) ? "hasError" : ""
+                  }
                 >
-                  <option />
+                  <option value="" disabled selected>
+                    Select Model
+                  </option>
                   {carsModels.map((item) => (
                     <option key={item} value={item}>
                       {item}
@@ -140,7 +149,9 @@ const FormSection = (): JSX.Element => {
                   ))}
                 </select>
                 {errors.model ? (
-                  <div className="error-msg align-right">Please select a car model</div>
+                  <div className="error-msg align-right">
+                    Please select a car model
+                  </div>
                 ) : null}
               </label>
             </div>
@@ -153,10 +164,14 @@ const FormSection = (): JSX.Element => {
                 value={name}
                 onChange={(e) => handleUpdateName(e.target.value)}
                 onBlur={(e) => handleUpdateName(e.target.value)}
-                className={errors.name || (invalidForm && !name) ? "hasError" : ""}
+                className={
+                  errors.name || (invalidForm && !name) ? "hasError" : ""
+                }
               />
               {errors.name ? (
-                <div className="error-msg align-right">Please enter your full name</div>
+                <div className="error-msg align-right">
+                  Please enter your full name
+                </div>
               ) : null}
 
               <label>Your Phone Number</label>
@@ -166,7 +181,9 @@ const FormSection = (): JSX.Element => {
                 value={phone}
                 onChange={(e) => handleUpdatePhone(e.target.value)}
                 onBlur={(e) => handleUpdatePhone(e.target.value)}
-                className={errors.phone || (invalidForm && !phone) ? "hasError" : ""}
+                className={
+                  errors.phone || (invalidForm && !phone) ? "hasError" : ""
+                }
               />
               {errors.phone ? (
                 <div className="error-msg align-right">
@@ -174,7 +191,11 @@ const FormSection = (): JSX.Element => {
                 </div>
               ) : null}
             </div>
-            <button className="red-button" type="submit" onClick={handleCheckValidations}>
+            <button
+              className="red-button"
+              type="submit"
+              onClick={handleCheckValidations}
+            >
               Send Your Inquiry <img src={shapeIcon} alt="Arrow Icon" />
             </button>
           </form>
